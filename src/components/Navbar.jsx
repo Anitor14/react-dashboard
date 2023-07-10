@@ -10,6 +10,26 @@ import avatar from "../data/avatar.jpg";
 import { Cart, Chat, Notification, UserProfile } from ".";
 import { useStateContext } from "../contexts/ContextProvider";
 
+const NavButton = ({ title, customFunc, icon, color, dotColor }) => {
+  return (
+    <TooltipComponent content={title} position="BottomCenter">
+      <button
+        type="button"
+        onClick={() => customFunc()}
+        style={{ color }}
+        className="relative text-xl rounded-full p-3 hover:bg-light-gray"
+      >
+        <span
+          style={{ background: dotColor }}
+          className="absolute inline-flex rounded-full h-2 w-2 right-2 top-2"
+        >
+          {icon}
+        </span>
+      </button>
+    </TooltipComponent>
+  );
+};
+
 const Navbar = () => {
   const {
     currentColor,
@@ -43,7 +63,25 @@ const Navbar = () => {
   // handle active menu set the active menu toggles.
   const handleActiveMenu = () => setActiveMenu(!activeMenu);
 
-  return <div>Navbar</div>;
+  return (
+    <div className="flex justify-between p-2 md:ml-6 md:mr-6 relative">
+      <NavButton
+        title={"menu"}
+        customFunc={handleActiveMenu}
+        color={currentColor}
+        icon={<AiOutlineMenu />}
+      />
+      <div className="flex">
+        <NavButton
+          title={"cart"}
+          customFunc={() => handleClick("cart")}
+          color={currentColor}
+        />
+        <NavButton />
+        <NavButton />
+      </div>
+    </div>
+  );
 };
 
 export default Navbar;
