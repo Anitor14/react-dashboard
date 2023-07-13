@@ -6,6 +6,7 @@ import Cart from "./Cart";
 import Chat from "./Chat";
 import Notification from "./Notification";
 import UserProfile from "./UserProfile";
+import Button from "./Button";
 
 export {
   Cart,
@@ -16,4 +17,5 @@ export {
   Navbar,
   Sidebar,
   ThemeSettings,
+  Button,
 };

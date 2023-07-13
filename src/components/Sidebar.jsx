@@ -1,4 +1,3 @@
-import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import { SiShopware } from "react-icons/si";
 import { MdOutlineCancel } from "react-icons/md";
@@ -16,7 +15,6 @@ const Sidebar = () => {
       setActiveMenu(false);
     }
   };
-  console.log(activeMenu);
 
   const normalLink =
     "flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-light-gray m-2";
@@ -25,7 +23,7 @@ const Sidebar = () => {
     <div className="ml-3 h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto p-10">
       {activeMenu && (
         <>
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-center z-50">
             <Link
               to={"/"}
               onClick={handleCloseSidebar}
@@ -64,7 +62,7 @@ const Sidebar = () => {
                           isActive ? activeLink : normalLink
                         }
                       >
-                        {link.icon}{" "}
+                        {link.icon}
                         <span className="capitalize">{link.name}</span>
                       </NavLink>
                     );
