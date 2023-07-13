@@ -113,6 +113,7 @@ const Navbar = () => {
         </Tooltip>
 
         {isClicked.notification && <Notification />}
+        {isClicked.cart && <Cart />}
       </div>
     </div>
   );
