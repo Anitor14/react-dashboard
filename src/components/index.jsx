@@ -7,6 +7,10 @@ import Chat from "./Chat";
 import Notification from "./Notification";
 import UserProfile from "./UserProfile";
 import Button from "./Button";
+import SparkLine from "./Charts/SparkLine";
+import LineChart from "./Charts/LineChart";
+import Pie from "./Charts/Pie";
+import Stacked from "./Charts/Stacked";
 
 export {
   Cart,
@@ -18,4 +22,8 @@ export {
   Sidebar,
   ThemeSettings,
   Button,
+  SparkLine,
+  LineChart,
+  Pie,
+  Stacked,
 };
