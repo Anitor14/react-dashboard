@@ -42,13 +42,21 @@ function App() {
   } = useStateContext();
   useEffect(() => {
     const currentThemeColor = localStorage.getItem("colorMode");
-    const currentThemeMode = localStorage.getItem("themMode");
+    const currentThemeMode = localStorage.getItem("themeMode");
     // checking if the currentThemColor and currentThemeMode are present in the localStorage.
-    if (currentThemeMode && currentThemeMode) {
-      setCurrentMode(currentThemeColor);
-      setCurrentColor(currentThemeMode);
+    console.log(
+      `this is localStorage_themeColor: ${currentThemeColor} themeColor: ${currentColor} vs, and this is the localStorage_themeMode:${currentThemeMode} themeMode: ${currentMode}`
+    );
+
+    if (currentThemeMode && currentThemeColor) {
+      setCurrentMode(currentThemeMode);
+      setCurrentColor(currentThemeColor);
     }
-  });
+  }, []);
+
+  console.log(
+    `this is the current mode test case ${currentMode} and this is the current color test case ${currentColor}`
+  );
   return (
     <div className={currentMode === "Dark" ? "dark" : ""}>
       <BrowserRouter>
